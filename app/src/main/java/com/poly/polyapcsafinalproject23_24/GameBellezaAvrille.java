@@ -67,7 +67,6 @@ private void setAllBtnsVisible()
     //   variables you plan to use throughout the adventure
     private Scanner scan;
     private int numLives;
-    //private Player player; (optional)
 
 
     public void run()
