@@ -91,7 +91,7 @@ private void setAllBtnsVisible()
     private void start()
     {
         //start adventure here
-        System.out.println("\nYou are in the Call of Duty life were you have to be productive and decide what you want to do, you either win or lose the game, where would you like to start off first?");
+        System.out.println("\nYou are in the Call of Duty life were you have to be productive and decide what you want to do, you either win or lose the game!, where would you like to start off first?");
         System.out.println("1. Go to Canada\n2. Stay home\n3. Go on a roadtrip");
         int choice = Util.enterInt(1,3);
 
