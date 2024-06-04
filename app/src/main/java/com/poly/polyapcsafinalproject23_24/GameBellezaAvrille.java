@@ -45,12 +45,118 @@ protected void run() {
 
 
 
+
 private void setAllBtnsVisible()
 {
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
 }
+
+public void start()
+{
+    isWon = false;
+    ivStory.setImageResource(R.drawable.im_thecallofduty_title);
+
+    tvStoryText.setText("It's Winter Break! Where to relax?");
+
+    setAllBtnsVisible();
+    btn1.setText("Go To Canada");
+    btn2.setText("Stay Home");
+    btn3.setText("Go on a roadtrip");
+
+    btn1.setOnClickListener(new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) { goToCanada(); }
+    });
+
+    btn2.setOnClickListener(new View. OnClickListener(){
+
+        @Override
+        public void onClick(View v) { stayHome();}
+    });
+
+    btn3.setOnClickListener(new View. OnClickListener(){
+
+        @Override
+        public void onClick(View v) { goOnARoadtrip();}
+});
+
+    private void goToCanada()
+    {
+       tvStoryText.setText("You chose Canada and there are some things to do, what option would you like to go with and experience?");
+
+       ivStory.setImageResource(R.drawable.im_thecallofduty_canada);
+
+       setAllBtnsVisible();
+       btn1.setText("Go to the beach");
+       btn2.setText("GO to the mountains");
+       btn3.setText(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) { goToTheBeach(); }
+        });
+
+        btn2.setOnClickListener(new View. OnClickListener(){
+
+            @Override
+            public void onClick(View v) { goToTheMountains();}
+        });
+
+    }
+
+    private void stayHome()
+    {
+        tvStoryText.setText("You decided to just stay at home, you gotta be productive!");
+
+        ivStory.setImageResource(R.drawable.im_thecallofduty_home);
+
+        setAllBtnsVisible();
+        btn1.setText("Do nothing all day");
+        btn2.setText("Do chores");
+        btn3.setText(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) { doNothingAllDay(); }
+        });
+
+        btn2.setOnClickListener(new View. OnClickListener(){
+
+            @Override
+            public void onClick(View v) { doChores();}
+        });
+
+    }
+
+    private void goOnARoadtrip()
+    {
+        tvStoryText.setText("You chose to go on a roadtrip, let's go!!!");
+
+        ivStory.setImageResource(R.drawable.im_thecallofduty_roadtrip);
+
+        setAllBtnsVisible();
+        btn1.setText("Traveled for four hours to Las Vegas");
+        btn2.setText("Go to the iconic places");
+        btn3.setText(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) { doNOthingAllDay(); }
+        });
+
+        btn2.setOnClickListener(new View. OnClickListener(){
+
+            @Override
+            public void onClick(View v) { doChores();}
+        });
+
+    }
 
 
 
