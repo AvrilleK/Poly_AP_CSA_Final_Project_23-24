@@ -122,7 +122,7 @@ public void start()
         btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v) { doNothingAllDay(); }
+            public void onClick(View v) { doNOthingAllDay(); }
         });
 
         btn2.setOnClickListener(new View. OnClickListener(){
