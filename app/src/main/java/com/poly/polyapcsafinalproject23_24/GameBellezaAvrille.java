@@ -119,7 +119,7 @@ private void setAllBtnsVisible()
     {
         ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        tvStoryText.setText("You chose Canada and there are some things to do, what option would you like to go with and experience?");
+        tvStoryText.setText("chose Canada and there are some things to do, what option would you like to go with and experience?");
 
         setAllBtnsVisible();
         btn1.setText("Go to the beach");
