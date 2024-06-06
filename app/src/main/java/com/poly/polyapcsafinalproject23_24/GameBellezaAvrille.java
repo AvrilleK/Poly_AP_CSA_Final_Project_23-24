@@ -168,7 +168,7 @@ private void setAllBtnsVisible()
             }
         });
     }
-
+y
     private void goToMountains()
     {
         System.out.println("\nYou decided to go to the mountains, what do you want to do?");
