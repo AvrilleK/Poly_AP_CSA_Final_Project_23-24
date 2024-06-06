@@ -52,203 +52,121 @@ private void setAllBtnsVisible()
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
 }
+            private void start()
+            {
+                tvStoryText.setText("You decided to chose the beach, what activity do you want to do first?");
 
-public void start()
-{
-    isWon = false;
-    ivStory.setImageResource(R.drawable.im_thecallofduty_title);
+                ivStory.setImageResource(R.drawable.im_laborday_swimming);
 
-    tvStoryText.setText("It's Winter Break! Where to relax?");
+                setAllBtnsVisible();
+                btn1.setText("ride boat");
+                btn2.setText("ride kayak");
+                btn3.setVisibility(View.INVISIBLE);
+                btn4.setVisibility(View.INVISIBLE);
 
-    setAllBtnsVisible();
-    btn1.setText("Go To Canada");
-    btn2.setText("Stay Home");
-    btn3.setText("Go on a roadtrip");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        rideBoat();
+                    }
+                });
 
-    btn1.setOnClickListener(new View.OnClickListener() {
-
-        @Override
-        public void onClick(View v) { goToCanada(); }
-    });
-
-    btn2.setOnClickListener(new View. OnClickListener(){
-
-        @Override
-        public void onClick(View v) { stayHome();}
-    });
-
-    btn3.setOnClickListener(new View. OnClickListener(){
-
-        @Override
-        public void onClick(View v) { goOnARoadtrip();}
-});
-
-    private void goToCanada()
-    {
-       tvStoryText.setText("You chose Canada and there are some things to do, what option would you like to go with and experience?");
-
-       ivStory.setImageResource(R.drawable.im_thecallofduty_canada);
-
-       setAllBtnsVisible();
-       btn1.setText("Go to the beach");
-       btn2.setText("GO to the mountains");
-       btn3.setText(View.INVISIBLE);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) { goToTheBeach(); }
-        });
-
-        btn2.setOnClickListener(new View. OnClickListener(){
-
-            @Override
-            public void onClick(View v) { goToTheMountains();}
-        });
-
+                btn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        rideKayak();
+                    }
+                });
     }
-
-    private void stayHome()
-    {
-        tvStoryText.setText("You decided to just stay at home, you gotta be productive!");
-
-        ivStory.setImageResource(R.drawable.im_thecallofduty_home);
-
-        setAllBtnsVisible();
-        btn1.setText("Do nothing all day");
-        btn2.setText("Do chores");
-        btn3.setText(View.INVISIBLE);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) { doNothingAllDay(); }
-        });
-
-        btn2.setOnClickListener(new View. OnClickListener(){
-
-            @Override
-            public void onClick(View v) { doChores();}
-        });
-
-    }
-
-    private void goOnARoadtrip()
-    {
-        tvStoryText.setText("You chose to go on a roadtrip, let's go!!!");
-
-        ivStory.setImageResource(R.drawable.im_thecallofduty_roadtrip);
-
-        setAllBtnsVisible();
-        btn1.setText("Traveled for four hours to Las Vegas");
-        btn2.setText("Go to the iconic places");
-        btn3.setText(View.INVISIBLE);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) { doNOthingAllDay(); }
-        });
-
-        btn2.setOnClickListener(new View. OnClickListener(){
-
-            @Override
-            public void onClick(View v) { doChores();}
-        });
-
-    }
-
-
-
-
-  /*
-  TO DO
-  1. Code the useParachute() method
-  2. add in Util.pauseConsole() above Util.clearConsole() where needed
-  3. code win() and lose()
-  */
-
-
-    //instance variables
-    //   variables you plan to use throughout the adventure
-    private Scanner scan;
-    private int numLives;
-
-
-    public void run()
-    {
-        //initialize number of lives
-        numLives = 5;
-        //create a scanner object for user input
-        scan = new Scanner(System.in);
-
-        //create a player object (optional)
-        //player = new Player(...)
-
-        //display project title and description
-        Util.clearConsole();
-        System.out.println("The Call of Duty");
-        System.out.println("It's Winter Break! Where to relax?");
-        Util.pauseConsole();
-        Util.clearConsole();
-
-        start();
-    }
-    private void start()
-    {
         //start adventure here
-        System.out.println("\nYou are in the Call of Duty life were you have to be productive and decide what you want to do, you either win or lose the game, where would you like to start off first?");
-        System.out.println("1. Go to Canada\n2. Stay home\n3. Go on a roadtrip");
-        int choice = Util.enterInt(1,3);
+        isWon = false;
 
-        if(choice ==1)
-        {
-            goToCanada();
-        }
-        else if(choice ==2)
-        {
-            stayHome();
-        }
-        else if(choice ==3)
-        {
-            roadTrip();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_title);
+        playAudio(R.raw.audio_laborday_bass);
+
+        tvStoryText.setText("You are in the Call of Duty life were you have to be productive and decide what you want to do, you either win or lose the game, where would you like to start off first?");
+
+        setAllBtnsVisible();
+        btn1.setText("Go to canada");
+        btn2.setText("stay home");
+        btn3.setText("road trip");
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                go to goToCanada();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stayHome();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roadTrip();
+            }
+        });
     }
 
     // GO TO CANADA
 
     private void goToCanada()
     {
-        Util.clearConsole();
-        System.out.println("You chose Canada and there are some things to do, what option would you like to go with and experience?");
-        System.out.println("1. Go to the beach\n2. Go to the mountains");
-        int choice = Util.enterInt(1,2);
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if(choice ==1)
-        {
-            goToBeach();
-        }
-        else if(choice ==2)
-        {
-            goToMountains();
-        }
+        tvStoryText.setText("You chose Canada and there are some things to do, what option would you like to go with and experience?");
+
+        setAllBtnsVisible();
+        btn1.setText("Go to the beach");
+        btn2.setText("Go to the mountains");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToBeach();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToMountains();
+            }
+        });
     }
 
     private void goToBeach()
     {
-        Util.clearConsole();
-        System.out.println("\nYou decided to chose the beach, what activity do you want to do first?");
-        System.out.println("1. Ride a boat\n2. Ride a kayak");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("You decided to chose the beach, what activity do you want to do first?");
 
-        if(choice ==1)
-        {
-            rideBoat();
-        }
-        else if(choice ==2)
-        {
-            rideKayak();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+
+        setAllBtnsVisible();
+        btn1.setText("ride boat");
+        btn2.setText("ride kayak");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rideBoat();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rideKayak();
+            }
+        });
     }
 
     private void goToMountains()
