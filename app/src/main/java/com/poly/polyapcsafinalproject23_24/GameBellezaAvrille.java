@@ -39,7 +39,6 @@ protected void run() {
     tvTitle.setText("The Call of Duty ");
     tvSubtitle.setText("It's Winter Break! Where to relax?");
 
-    numLives = 5;
     start();
 }
 
@@ -53,91 +52,50 @@ private void setAllBtnsVisible()
         btn3.setVisibility(View.VISIBLE);
 }
 
-public void start()
-{
+public void start() {
     isWon = false;
-    ivStory.setImageResource(R.drawable.im_thecallofduty_title);
+    ivStory.setImageResource(R.drawable.im_bellezaavrille_thecallofduty);
 
     tvStoryText.setText("It's Winter Break! Where to relax?");
 
     setAllBtnsVisible();
     btn1.setText("Go To Canada");
     btn2.setText("Stay Home");
-    btn3.setText("Go on a roadtrip");
+    btn3.setText("Go on a roadTrip");
 
     btn1.setOnClickListener(new View.OnClickListener() {
 
         @Override
-        public void onClick(View v) { goToCanada(); }
+        public void onClick(View view) {
+            goToCanada();
+        }
     });
 
-    btn2.setOnClickListener(new View. OnClickListener(){
+    btn2.setOnClickListener(new View.OnClickListener() {
 
         @Override
-        public void onClick(View v) { stayHome();}
+        public void onClick(View view) {
+            stayHome();
+        }
     });
 
-    btn3.setOnClickListener(new View. OnClickListener(){
+    btn3.setOnClickListener(new View.OnClickListener() {
 
         @Override
-        public void onClick(View v) { goOnARoadtrip();}
-});
-
-    private void goToCanada()
-    {
-       tvStoryText.setText("You chose Canada and there are some things to do, what option would you like to go with and experience?");
-
-       ivStory.setImageResource(R.drawable.im_thecallofduty_canada);
-
-       setAllBtnsVisible();
-       btn1.setText("Go to the beach");
-       btn2.setText("GO to the mountains");
-       btn3.setText(View.INVISIBLE);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) { goToTheBeach(); }
-        });
-
-        btn2.setOnClickListener(new View. OnClickListener(){
-
-            @Override
-            public void onClick(View v) { goToTheMountains();}
-        });
+        public void onClick(View view) {
+            goOnARoadTrip();
+        }
+    });
+}
 
     }
 
-    private void stayHome()
-    {
-        tvStoryText.setText("You decided to just stay at home, you gotta be productive!");
 
-        ivStory.setImageResource(R.drawable.im_thecallofduty_home);
-
-        setAllBtnsVisible();
-        btn1.setText("Do nothing all day");
-        btn2.setText("Do chores");
-        btn3.setText(View.INVISIBLE);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) { doNothingAllDay(); }
-        });
-
-        btn2.setOnClickListener(new View. OnClickListener(){
-
-            @Override
-            public void onClick(View v) { doChores();}
-        });
-
-    }
-
-    private void goOnARoadtrip()
+    private void goOnARoadTrip()
     {
         tvStoryText.setText("You chose to go on a roadtrip, let's go!!!");
 
-        ivStory.setImageResource(R.drawable.im_thecallofduty_roadtrip);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_goonaroadtrip);
 
         setAllBtnsVisible();
         btn1.setText("Traveled for four hours to Las Vegas");
@@ -147,7 +105,7 @@ public void start()
         btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v) { doNOthingAllDay(); }
+            public void onClick(View v) { doNothing(); }
         });
 
         btn2.setOnClickListener(new View. OnClickListener(){
@@ -159,71 +117,6 @@ public void start()
     }
 
 
------------------------------------------------------------------------------------------------------------------------
-
-  /*
-  TO DO
-  1. Code the useParachute() method
-  2. add in Util.pauseConsole() above Util.clearConsole() where needed
-  3. code win() and lose()
-  */
-
-
-    //instance variables
-    //   variables you plan to use throughout the adventure
-    private Scanner scan;
-    private int numLives;
-
-
-    public void run()
-    {
-        //initialize number of lives
-        numLives = 5;
-        //create a scanner object for user input
-        scan = new Scanner(System.in);
-
-        //create a player object (optional)
-        //player = new Player(...)
-
-        //display project title and description
-        Util.clearConsole();
-        System.out.println("The Call of Duty");
-        System.out.println("It's Winter Break! Where to relax?");
-        Util.pauseConsole();
-        Util.clearConsole();
-
-        start();
-    }
-    private void start()
-    {
-        isWon = false;
-        ivStory.setImageResource(R.drawable.im_thecallofduty_title);
-
-        tvStoryText.setText("It's Winter Break! Where to relax?");
-
-        setAllBtnsVisible();
-        btn1.setText("Go To Canada");
-        btn2.setText("Stay Home");
-        btn3.setText("Go on a roadtrip");
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) { goToCanada(); }
-        });
-
-        btn2.setOnClickListener(new View. OnClickListener(){
-
-            @Override
-            public void onClick(View v) { stayHome();}
-        });
-
-        btn3.setOnClickListener(new View. OnClickListener(){
-
-            @Override
-            public void onClick(View v) { goOnARoadtrip();}
-        });
-    }
 
     // GO TO CANADA
 
@@ -231,7 +124,7 @@ public void start()
     {
         tvStoryText.setText("You chose Canada and there are some things to do, what option would you like to go with and experience?");
 
-        ivStory.setImageResource(R.drawable.im_thecallofduty_canada);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_gotocanada);
 
         setAllBtnsVisible();
         btn1.setText("Go to the beach");
@@ -241,13 +134,13 @@ public void start()
         btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v) { goToTheBeach(); }
+            public void onClick(View v) { goToBeach(); }
         });
 
         btn2.setOnClickListener(new View. OnClickListener(){
 
             @Override
-            public void onClick(View v) { goToTheMountains();}
+            public void onClick(View v) { goToMountains();}
         });
     }
 
@@ -255,7 +148,7 @@ public void start()
     {
         tvStoryText.setText("You decided to chose the beach, what activity do you want to do first?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_gotobeach);
 
         setAllBtnsVisible();
         btn1.setText("Ride a boat");
@@ -281,7 +174,7 @@ public void start()
     {
         tvStoryText.setText("You decided to go to the mountains, what do you want to do?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_gotomountains);
 
         setAllBtnsVisible();
         btn1.setText("Use a parachute");
@@ -308,7 +201,7 @@ public void start()
         isWon = true;
         tvStoryText.setText("You chose to ride a boat so then you arrived safely, congrats!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_rideboat);
 
         setAllBtnsVisible();
         btn1.setText("Congrats");
@@ -323,12 +216,11 @@ public void start()
         });
     }
 
-    private void rideKayak()
-    {
+    private void rideKayak() {
         isWon = true;
         tvStoryText.setText("You chose to ride a kayak so then you didn't end up to your destination, would you want go back?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_ridekayak);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -341,13 +233,14 @@ public void start()
                 goBack();
             }
         });
+    }
 
     private void yes()
     {
         isWon = true;
         tvStoryText.setText("You want to go back so you'll get through to your destination!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_yes);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -365,7 +258,7 @@ public void start()
     {
         tvStoryText.setText("You chose to stay so you you didn't ended up at your destination");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_nah);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -383,7 +276,7 @@ public void start()
     {
         tvStoryText.setText("You had a fun time up above !");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_useparachute);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -401,7 +294,7 @@ public void start()
     {
         tvStoryText.setText("nYou think of riding a bike, what route would you go to?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_gobiking);
 
         setAllBtnsVisible();
         btn1.setText("Go right");
@@ -427,7 +320,7 @@ public void start()
     {
         tvStoryText.setText("You went on wrong a route! want to take the other way, instead?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_goright);
 
         setAllBtnsVisible();
         btn1.setText("Give Up");
@@ -455,7 +348,7 @@ public void start()
         isWon = true;
         tvStoryText.setText("You arrived at your destination, great!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_goleft);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -474,7 +367,7 @@ public void start()
     {
         tvStoryText.setText("You just gave up??! Well, you didn't end up to the place you want to go");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_giveup);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -492,7 +385,7 @@ public void start()
     {
         tvStoryText.setText("You went back on your way so then you end up at your destination, cool!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_goback);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -512,7 +405,7 @@ public void start()
     {
         tvStoryText.setText("You decided to just stay at home, you gotta be productive!");
 
-        ivStory.setImageResource(R.drawable.im_thecallofduty_home);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_stayhome);
 
         setAllBtnsVisible();
         btn1.setText("Do nothing all day");
@@ -522,7 +415,7 @@ public void start()
         btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v) { doNothingAllDay(); }
+            public void onClick(View v) { doNothing(); }
         });
 
         btn2.setOnClickListener(new View. OnClickListener(){
@@ -536,7 +429,7 @@ public void start()
     {
         tvStoryText.setText("You dont want to do nothing but u gotta do something. Decide now!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_donothing);
 
         setAllBtnsVisible();
         btn1.setText("Start doing something");
@@ -562,7 +455,7 @@ public void start()
     {
         tvStoryText.setText("You change your mind and you want to do something now. What to do first? ");
 
-        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_dosomething);
 
         setAllBtnsVisible();
         btn1.setText("Cook food");
@@ -588,7 +481,7 @@ public void start()
     {
         tvStoryText.setText("You got caught by your mom by being lazy, you're screwed!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_staylazy);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -606,7 +499,7 @@ public void start()
     {
         tvStoryText.setText("You want to do chores, that's so nice of you! Now, you pick a chore that you want to do first. ");
 
-        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_dochores);
 
         setAllBtnsVisible();
         btn1.setText("Wash the dishes");
@@ -626,12 +519,13 @@ public void start()
                 foldColthes();
             }
         });
+        }
 
     private void washDishes()
     {
         tvStoryText.setText("You manage to wash the dishes, great job!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_washdishes);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -649,7 +543,7 @@ public void start()
     {
         tvStoryText.setText("You wnat to do laundry, okay! Let's start doing this!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_dolaundry);
 
         setAllBtnsVisible();
         btn1.setText("Fold the clothes");
@@ -666,7 +560,7 @@ public void start()
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clothesleaveWrinkle();
+                clothesLeaveWrinkle();
             }
         });
     }
@@ -675,7 +569,7 @@ public void start()
     {
         tvStoryText.setText("You finish your chore!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_foldclothes);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -693,7 +587,7 @@ public void start()
     {
         tvStoryText.setText("You finish your chore!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_clotheswrinkle);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -711,7 +605,7 @@ public void start()
     {
         tvStoryText.setText("You chose to cook a food! Uhhh! I'm hungry!!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_cookfood);
 
         setAllBtnsVisible();
         btn1.setText("Eat the food you cooked");
@@ -737,7 +631,7 @@ public void start()
     {
         tvStoryText.setText("Congrats! You finished the food you cooked!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_eatfood);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -756,7 +650,7 @@ public void start()
     {
         tvStoryText.setText("You wasted so much food!!!!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_foodrotten);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -774,7 +668,7 @@ public void start()
     {
         tvStoryText.setText("You need to be productive first!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_takingshower);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -792,9 +686,9 @@ public void start()
 
     private void roadTrip()
     {
-        tvStoryText.setText("You chose to go on a roadtrip, let's go!!!");
+        tvStoryText.setText("You chose to go on a roadTrip, let's go!!!");
 
-        ivStory.setImageResource(R.drawable.im_thecallofduty_roadtrip);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_goonaroadtrip);
 
         setAllBtnsVisible();
         btn1.setText("Traveled for four hours to Las Vegas");
@@ -804,7 +698,7 @@ public void start()
         btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v) { doNOthingAllDay(); }
+            public void onClick(View v) { traveledFourHours(); }
         });
 
         btn2.setOnClickListener(new View. OnClickListener(){
@@ -819,7 +713,7 @@ public void start()
     {
         tvStoryText.setText("You chose to go on a roadtrip, let's go!!!");
 
-        ivStory.setImageResource(R.drawable.im_thecallofduty_roadtrip);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_traveledfor4hours);
 
         setAllBtnsVisible();
         btn1.setText("You ran out of gas");
@@ -843,7 +737,7 @@ public void start()
     {
         tvStoryText.setText("You chose to go to the iconic places");
 
-        ivStory.setImageResource(R.drawable.im_thecallofduty_roadtrip);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_gotoiconicplaces);
 
         setAllBtnsVisible();
         btn1.setText("bad day its raining");
@@ -853,7 +747,7 @@ public void start()
         btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v) { itsraining(); }
+            public void onClick(View v) { itsRaining(); }
         });
 
         btn2.setOnClickListener(new View. OnClickListener(){
@@ -867,7 +761,7 @@ public void start()
     {
         tvStoryText.setText("Now, you ran out of gas in the middle of the road, what would you do?");
 
-        ivStory.setImageResource(R.drawable.im_thecallofduty_roadtrip);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_fuelthecar);
 
         setAllBtnsVisible();
         btn1.setText("You want to rest");
@@ -891,7 +785,7 @@ public void start()
     {
         tvStoryText.setText("You chose to pull Over, then a car hit you! You died! You are no longer alive");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_pullover);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -909,7 +803,7 @@ public void start()
     {
         tvStoryText.setText("It's raining outside, still want to go?");
 
-        ivStory.setImageResource(R.drawable.im_thecallofduty_roadtrip);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_baditsraining);
 
         setAllBtnsVisible();
         btn1.setText("yes, i still want to go");
@@ -933,7 +827,7 @@ public void start()
     {
         tvStoryText.setText("Wow!! You met Kendall Jenner! What's one thing you want to ask for her?\"");
 
-        ivStory.setImageResource(R.drawable.im_thecallofduty_roadtrip);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_metkendalljenner);
 
         setAllBtnsVisible();
         btn1.setText(" Ask for a picture");
@@ -957,7 +851,7 @@ public void start()
     {
         tvStoryText.setText("You then chose to get a rest, you forgot about your destination, you're late!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_stayinghome);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -975,7 +869,7 @@ public void start()
     {
         tvStoryText.setText("You chose to fuel the car first so then you can continue driving");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_fuelthecar);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -993,7 +887,7 @@ public void start()
     {
         tvStoryText.setText("It's raining cats and dogs! You need to stay home!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_wanttogo);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -1012,7 +906,7 @@ public void start()
 
         tvStoryText.setText("You chose to stay for the better, nice decision!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_stayhome);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -1030,7 +924,7 @@ public void start()
     {
         tvStoryText.setText("You post it on social media, everyone sees you're famous now!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_askpicture);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -1048,7 +942,7 @@ public void start()
     {
         tvStoryText.setText("It's raining cats and dogs! You need to stay home!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_beingshy);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -1066,25 +960,7 @@ public void start()
     {
         tvStoryText.setText("It's raining cats and dogs! You need to stay home!");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
-
-        setAllBtnsVisible();
-        btn1.setText("Next");
-        btn2.setVisibility(View.INVISIBLE);
-        btn3.setVisibility(View.INVISIBLE);
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                lose();
-            }
-        });
-    }
-
-    private void lose()
-    {
-        tvStoryText.setText("You post it on social media, everyone sees you're famous now!");
-
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_win);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -1094,6 +970,24 @@ public void start()
             @Override
             public void onClick(View v) {
                 win();
+            }
+        });
+    }
+
+    private void lose()
+    {
+        tvStoryText.setText("You post it on social media, everyone sees you're famous now!");
+
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_lose);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lose();
             }
         });
     }
