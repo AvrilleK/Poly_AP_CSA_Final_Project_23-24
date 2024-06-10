@@ -5,10 +5,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.poly.polyapcsafinalproject23_24.GameActivity;
-
-import java.util.Scanner;
-
 public class GameBellezaAvrille extends GameActivity {
 
 private TextView tvTitle, tvSubtitle, tvStoryText;
@@ -90,14 +86,14 @@ public void start() {
 
     private void goToCanada()
     {
-       tvStoryText.setText("You chose Canada and there are some things to do, what option would you like to go with and experience?");
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_gotocanada);
 
-       ivStory.setImageResource(R.drawable.im_bellezaavrille_gotocanada);
+        tvStoryText.setText("You chose Canada and there are some things to do, what option would you like to go with and experience?");
 
        setAllBtnsVisible();
        btn1.setText("Go to the beach");
        btn2.setText("GO to the mountains");
-       btn3.setText(View.INVISIBLE);
+       btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
 
@@ -122,7 +118,7 @@ public void start() {
         setAllBtnsVisible();
         btn1.setText("Do nothing all day");
         btn2.setText("Do chores");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
 
@@ -147,7 +143,7 @@ public void start() {
         setAllBtnsVisible();
         btn1.setText("Traveled for four hours to Las Vegas");
         btn2.setText("Go to the iconic places");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
 
@@ -695,7 +691,7 @@ public void start() {
         setAllBtnsVisible();
         btn1.setText("Traveled for four hours to Las Vegas");
         btn2.setText("Go to the iconic places");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
 
@@ -720,7 +716,7 @@ public void start() {
         setAllBtnsVisible();
         btn1.setText("You ran out of gas");
         btn2.setText("Pull over on the side of the road");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
 
@@ -744,7 +740,7 @@ public void start() {
         setAllBtnsVisible();
         btn1.setText("bad day its raining");
         btn2.setText("You met Kendall Jenner on the same spot");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
 
@@ -768,7 +764,7 @@ public void start() {
         setAllBtnsVisible();
         btn1.setText("You want to rest");
         btn2.setText("Fuel the car right away");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
 
@@ -810,7 +806,7 @@ public void start() {
         setAllBtnsVisible();
         btn1.setText("yes, i still want to go");
         btn2.setText("no, ill stay for the better");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
 
@@ -834,7 +830,7 @@ public void start() {
         setAllBtnsVisible();
         btn1.setText(" Ask for a picture");
         btn2.setText("You're being shy");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
 
