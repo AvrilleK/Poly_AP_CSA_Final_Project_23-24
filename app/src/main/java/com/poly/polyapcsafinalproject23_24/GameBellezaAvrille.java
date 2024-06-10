@@ -88,8 +88,55 @@ public void start() {
     });
 }
 
+    private void goToCanada()
+    {
+       tvStoryText.setText("You chose Canada and there are some things to do, what option would you like to go with and experience?");
+
+       ivStory.setImageResource(R.drawable.im_bellezaavrille_gotocanada);
+
+       setAllBtnsVisible();
+       btn1.setText("Go to the beach");
+       btn2.setText("GO to the mountains");
+       btn3.setText(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) { goToBeach(); }
+        });
+
+        btn2.setOnClickListener(new View. OnClickListener(){
+
+            @Override
+            public void onClick(View v) { goToMountains();}
+        });
+
     }
 
+    private void stayHome()
+    {
+        tvStoryText.setText("You decided to just stay at home, you gotta be productive!");
+
+        ivStory.setImageResource(R.drawable.im_bellezaavrille_stayhome);
+
+        setAllBtnsVisible();
+        btn1.setText("Do nothing all day");
+        btn2.setText("Do chores");
+        btn3.setText(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) { doNothing(); }
+        });
+
+        btn2.setOnClickListener(new View. OnClickListener(){
+
+            @Override
+            public void onClick(View v) { doChores();}
+        });
+
+    }
 
     private void goOnARoadTrip()
     {
@@ -119,30 +166,6 @@ public void start() {
 
 
     // GO TO CANADA
-
-    private void goToCanada()
-    {
-        tvStoryText.setText("You chose Canada and there are some things to do, what option would you like to go with and experience?");
-
-        ivStory.setImageResource(R.drawable.im_bellezaavrille_gotocanada);
-
-        setAllBtnsVisible();
-        btn1.setText("Go to the beach");
-        btn2.setText("GO to the mountains");
-        btn3.setText(View.INVISIBLE);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) { goToBeach(); }
-        });
-
-        btn2.setOnClickListener(new View. OnClickListener(){
-
-            @Override
-            public void onClick(View v) { goToMountains();}
-        });
-    }
 
     private void goToBeach()
     {
@@ -401,29 +424,6 @@ public void start() {
     }
     // STAY HOME
 
-    private void stayHome()
-    {
-        tvStoryText.setText("You decided to just stay at home, you gotta be productive!");
-
-        ivStory.setImageResource(R.drawable.im_bellezaavrille_stayhome);
-
-        setAllBtnsVisible();
-        btn1.setText("Do nothing all day");
-        btn2.setText("Do chores");
-        btn3.setText(View.INVISIBLE);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) { doNothing(); }
-        });
-
-        btn2.setOnClickListener(new View. OnClickListener(){
-
-            @Override
-            public void onClick(View v) { doChores();}
-        });
-    }
 
     private void doNothing()
     {
@@ -515,11 +515,13 @@ public void start() {
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                foldColthes();
-            }
+            public void onClick(View v) { foldClothes(); }
         });
-        }
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {doLaundry(); }
+        });
+    }
 
     private void washDishes()
     {
@@ -541,12 +543,12 @@ public void start() {
 
     private void doLaundry()
     {
-        tvStoryText.setText("You wnat to do laundry, okay! Let's start doing this!");
+        tvStoryText.setText("You want to do laundry, okay! Let's start doing this!");
 
         ivStory.setImageResource(R.drawable.im_bellezaavrille_dolaundry);
 
         setAllBtnsVisible();
-        btn1.setText("Fold the clothes");
+        btn1.setText("Fold clothes");
         btn2.setText("Leave the clothes wrinkled");
         btn3.setVisibility(View.INVISIBLE);
 
